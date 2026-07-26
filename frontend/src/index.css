@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Manrope:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+    /* Vin&c Aroma — Light Luxury Palette */
+    --bg: #FAFAF8;          /* off white */
+    --cream: #F4F1EA;       /* soft cream */
+    --ivory: #F8F6F2;       /* warm ivory */
+    --emerald: #0F4C45;     /* deep emerald green (primary) */
+    --emerald-2: #1E5B4F;   /* rich forest green */
+    --emerald-3: #0A3A34;   /* darkest green */
+    --emerald-deep: #123C37; /* text green */
+    --gold: #C9A35A;        /* champagne gold */
+    --gold-2: #B88A3C;      /* metallic gold */
+    --gold-hi: #D8B46A;     /* soft gold highlight */
+    --charcoal: #1F1F1F;    /* dark charcoal (body text) */
+    --muted: #6B6B6B;
+    --border: #E7E2D6;
+
+    /* shadcn (light) */
+    --background: 44 25% 97%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 172 66% 17%;
+    --primary-foreground: 44 25% 97%;
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 172 55% 15%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 0 0% 42%;
+    --accent: 39 47% 57%;
+    --accent-foreground: 0 0% 12%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 172 66% 17%;
+    --radius: 2px;
+}
+
+* { border-color: hsl(var(--border)); }
+
+html, body, #root {
+    background: var(--bg);
+    color: var(--charcoal);
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', 'Neue Haas Grotesk', -apple-system, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif { font-family: 'Cormorant Garamond', serif; }
+.font-body { font-family: 'Manrope', sans-serif; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--emerald); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+::selection { background: var(--emerald); color: #FAFAF8; }
+
+.gold-text { color: var(--gold); }
+.emerald-text { color: var(--emerald); }
+.emerald-bg { background: var(--emerald); }
+.gold-bg { background: var(--gold); }
+
+.tracking-luxe { letter-spacing: 0.2em; }
+
+/* PRIMARY BUTTON: emerald bg, gold border, white text */
+.btn-gold, .btn-primary {
+    background: var(--emerald);
+    color: #FAFAF8;
+    font-weight: 500;
+    padding: 0.9rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    transition: all 0.35s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+}
+.btn-gold:hover, .btn-primary:hover {
+    background: var(--emerald-2);
+    border-color: var(--gold-hi);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -12px rgba(15, 76, 69, 0.4);
+}
+.btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* SECONDARY BUTTON: cream bg, emerald border, emerald text, gold hover */
+.btn-outline-gold, .btn-secondary {
+    background: var(--cream);
+    color: var(--emerald);
+    border: 1px solid var(--emerald);
+    padding: 0.9rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    transition: all 0.35s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+.btn-outline-gold:hover, .btn-secondary:hover {
+    background: var(--emerald);
+    color: #FAFAF8;
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px -12px rgba(15, 76, 69, 0.4);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--emerald);
+    border: 1px solid #D8D3C2;
+    padding: 0.7rem 1.4rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold-2); background: #FAFAF8; }
+
+/* INPUTS: airy, elegant underline */
+.input-luxe {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #C8C1AF;
+    padding: 0.85rem 0;
+    color: var(--charcoal);
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 0.95rem;
+}
+.input-luxe:focus { border-bottom-color: var(--emerald); }
+.input-luxe::placeholder {
+    color: #9C947D;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+}
+
+.overline {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+}
+
+.divider-gold {
+    width: 40px; height: 1px; background: var(--gold);
+}
+
+.hover-lift { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -20px rgba(15, 76, 69, 0.18); }
+
+.card-luxe {
+    background: #FFFFFF;
+    border: 1px solid #EAE4D5;
+    box-shadow: 0 1px 2px rgba(15, 76, 69, 0.04), 0 12px 32px -20px rgba(15, 76, 69, 0.10);
+    transition: all 0.4s ease;
+}
+.card-luxe:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 8px rgba(15, 76, 69, 0.06), 0 24px 48px -20px rgba(15, 76, 69, 0.18);
+}
+
+.text-shadow-soft { text-shadow: 0 2px 20px rgba(255, 255, 255, 0.7); }
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+.shimmer {
+    background: linear-gradient(90deg, #F4F1EA 0%, #FFFFFF 50%, #F4F1EA 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+.grain-overlay::before { content: none; }

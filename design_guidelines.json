@@ -1,0 +1,119 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury)",
+  "brand": "Vin&c Aroma",
+  "tone": "Elegant, luxurious, sensual, minimalist yet visually rich",
+  "colors": {
+    "background": "#050505",
+    "surface": "#111111",
+    "surface_glass": "bg-black/60 backdrop-blur-2xl border border-white/10",
+    "primary_accent": "#D4AF37",
+    "primary_accent_hover": "#B3922A",
+    "text_main": "#FAFAFA",
+    "text_muted": "#A1A1AA",
+    "border_subtle": "#27272A",
+    "error": "#991B1B",
+    "success": "#166534"
+  },
+  "typography": {
+    "font_pairings": {
+      "headings": "Cormorant Garamond",
+      "body": "Outfit",
+      "mono": "JetBrains Mono"
+    },
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-none",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight",
+      "h3": "text-2xl sm:text-3xl font-light",
+      "overline": "text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]",
+      "body": "text-base font-light text-zinc-300 leading-relaxed",
+      "small": "text-sm font-light text-zinc-400"
+    }
+  },
+  "layout": {
+    "spacing_scale": "Generous (p-8 to p-24) to create a high-end feel.",
+    "container_max_width": "max-w-screen-2xl mx-auto",
+    "grid_system": "Bento Grid Protocol. Asymmetrical grids for storytelling. grid-cols-1 md:grid-cols-12.",
+    "border_radius": "Sharp edges. Use rounded-none or maximum rounded-sm for an editorial, premium aesthetic."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#D4AF37] text-black font-medium hover:bg-[#B3922A] transition-colors duration-300 rounded-none px-8 py-4",
+      "secondary": "bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 transition-colors duration-300 rounded-none px-8 py-4",
+      "ghost": "bg-transparent text-zinc-300 hover:text-white transition-colors duration-300 px-4 py-2 uppercase text-sm tracking-wider"
+    },
+    "inputs": {
+      "style": "bg-black/50 border-b border-zinc-800 text-white focus:border-[#D4AF37] focus:outline-none rounded-none placeholder:text-zinc-600 px-0 py-3 w-full transition-colors"
+    },
+    "cards": {
+      "product_card": "group relative overflow-hidden bg-[#0A0A0A] border border-white/5 cursor-pointer",
+      "hover_effect": "Image scales to 105%. A dark overlay slides in, revealing Scent Notes and Quick Add button via Framer Motion."
+    },
+    "navigation": {
+      "header": "Sticky top-0 z-50 w-full backdrop-blur-2xl bg-[#050505]/70 border-b border-white/5",
+      "links": "hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-zinc-300 hover:text-white"
+    },
+    "modals": {
+      "style": "backdrop-blur-3xl bg-[#0A0A0A]/95 border border-[#D4AF37]/20 p-8 shadow-2xl rounded-none"
+    }
+  },
+  "animations": {
+    "page_transition": "Framer Motion: Fade in and slight slide up (y: 20 to 0).",
+    "hover_states": "Smooth scale, opacity shifts. Images scale up duration-700 ease-out.",
+    "scroll_effects": "Fade-up on scroll for sections to feel cinematic and slow-paced."
+  },
+  "accessibility": {
+    "contrast": "Ensure all text over images has gradient overlays (bg-gradient-to-t from-black/80 to-transparent).",
+    "focus": "focus-visible:ring-1 focus-visible:ring-[#D4AF37] focus-visible:outline-none",
+    "testing": "MANDATORY data-testid on all interactive elements (e.g., data-testid='nav-shop-link', data-testid='add-to-cart-button')."
+  },
+  "images": {
+    "hero": [
+      {
+        "url": "https://images.pexels.com/photos/36779953/pexels-photo-36779953.jpeg",
+        "description": "Artistic luxury perfume bottle on textured dark fabric. Perfect for Hero section background with heavy dark overlay at bottom."
+      }
+    ],
+    "products": [
+      {
+        "url": "https://images.unsplash.com/photo-1598634222670-87c5f558119c",
+        "description": "Clear glass bottle on black. Ideal for product grid."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1770301410072-f6ef6dad65b2",
+        "description": "Gold bottle in dark box. Premium product imagery."
+      },
+      {
+        "url": "https://images.pexels.com/photos/15096784/pexels-photo-15096784.jpeg",
+        "description": "Luxurious bottle on rustic wood. Good for 'Best Sellers' or 'Featured'."
+      }
+    ],
+    "lifestyle_floral": [
+      {
+        "url": "https://images.unsplash.com/photo-1518343161123-c7e9ab4dc4da",
+        "description": "Dark sensual purple/pink flowers. Great for 'Scent Notes' background or 'Scent Finder Quiz'."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1612351641432-20a0f196086c",
+        "description": "Dark red roses. Good for sensuality mood in 'About' section."
+      }
+    ]
+  },
+  "specific_pages": {
+    "home": "Hero section ('Discover Your Signature Scent') -> Product Grid (hover reveals notes) -> Collections (Men/Women/Unisex) -> Sensual Lifestyle image with Scent Finder CTA.",
+    "product_detail": "Split layout. Left: Sticky large product gallery. Right: Details, Scent Pyramid (Top/Middle/Base notes), Add to Cart, longevity/sillage ratings, accordions.",
+    "cart_drawer": "Slides from right. Dark background. Shows items, subtotal, 'You May Also Like' cross-sells, Checkout button.",
+    "scent_finder": "Step-by-step modal quiz. High visual focus with large clickable image-cards for preferences (e.g., 'Floral', 'Woody').",
+    "auth": "Phone OTP login modal. Glassmorphic, minimal inputs, gold CTA."
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: framer-motion, lucide-react, clsx, tailwind-merge.",
+    "Implement pure React JS (.jsx/.js files). DO NOT USE TypeScript (.tsx/.ts).",
+    "Use Shadcn UI components (configured for JS/Tailwind) but heavily customize them to match the dark luxury aesthetic. Remove the default border-radius.",
+    "Always use the 'data-testid' attribute for buttons, forms, nav links, and interactive elements.",
+    "Use pure HTML/Tailwind for complex marketing layouts like the Hero and Scent Pyramid. Use Shadcn for the Cart Drawer (Sheet), Modals (Dialog), and Forms.",
+    "Ensure the gold accent (#D4AF37) is used elegantly and sparingly.",
+    "Do not use Inter font for headings. Use Cormorant Garamond for headings and Outfit for body.",
+    "For product hover effects, reveal the scent notes on hover with a smooth Framer Motion transition."
+  ]
+}
